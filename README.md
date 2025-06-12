@@ -17,41 +17,32 @@
 2. Maven 설치
 3. Tomcat 8.5 이상 설치
 
-## 프로젝트 설정 및 실행 방법
+## 이클립스에서 Run on Server로 실행 (전자정부 프레임워크 환경)
 
-### 1. 프로젝트 클론
-```bash
-git clone [repository-url]
-cd ex-Websocket
-```
+1. **이클립스에서 프로젝트 임포트**
+   - 이클립스를 실행하고, `File > Import > Existing Maven Projects` 선택
+   - 프로젝트 폴더를 지정하여 임포트
 
-### 2. Maven 빌드
-```bash
-mvn clean install
-```
+2. **Tomcat 서버 등록**
+   - `Servers` 뷰에서 `New > Server` 선택
+   - Tomcat 8.5 이상 서버를 선택하고 경로 지정
 
-### 3. Tomcat 설정
-1. Tomcat 8.5 이상 버전을 다운로드하여 설치
-2. Tomcat의 `conf/server.xml`에서 포트 설정 확인 (기본 8080)
-3. Tomcat의 `webapps` 디렉토리에 빌드된 WAR 파일 복사
-   - `target/ex-Websocket.war` 파일을 Tomcat의 `webapps` 디렉토리로 복사
+3. **Run on Server 실행**
+   - 프로젝트를 선택하고 우클릭
+   - `Run As > Run on Server` 메뉴 클릭
+   - 등록한 Tomcat 서버 선택 후 완료
 
-### 4. 서버 실행
-1. Tomcat의 `bin` 디렉토리에서 다음 명령어 실행:
-   - Windows: `startup.bat`
-   - Linux/Mac: `./startup.sh`
-
-### 5. 접속
-- 웹 브라우저에서 `http://localhost:8080` 접속
+4. **접속**
+   - 자동으로 브라우저가 실행되거나,
+   - 수동으로 `http://localhost:8080` 접속
 
 ## 프로젝트 구조
 ```
 src/
 ├── main/
-│   ├── java/        # Java 소스 코드
-│   ├── resources/   # 설정 파일
-│   └── webapp/      # 웹 리소스
-└── test/            # 테스트 코드
+    ├── java/        # Java 소스 코드
+    ├── resources/   # 설정 파일
+    └── webapp/      # 웹 리소스
 ```
 
 ## 주요 기능
